@@ -17,25 +17,33 @@
 
 ---
 
-> **The spec is the contract. The harness is the discipline.** Techneering fuses the four layers AI tooling has evolved through — **Prompt** (writing each instruction well), **Context** (managing what the AI sees), **Harness** (constraining the agent's behavior), **Loop** (iterating to quality) — into a single harness that wraps the model and turns AI coding from guesswork into craft. Sixteen skills walk a change from idea, through spec and code, to a verified, archived release. The spec keeps the AI pointed at the right target; the harness keeps it from drifting off course. Every line of code traces back to a requirement; nothing ships on a hunch.
+## The problem
 
-### AI tooling has evolved through four layers. Techneering was built for all of them.
+A model coding on its own will **drift**. It guesses when it should ask. It over-builds when it should stop. It forgets decisions made ten minutes ago, declares success without checking, and leaves you to discover — in review, in prod, at 2 a.m. — what it quietly got wrong.
 
-```
-Prompt  Engineering   →  how to write a single instruction well
-                          └─ every SKILL.md is a carefully designed prompt
-    ↓
-Context Engineering   →  how to manage what the AI sees
-                          └─ the workspace: files carry state, not chat memory
-    ↓
-Harness Engineering   →  how to constrain the agent's behavior
-                          └─ the 16-skill scaffold (spec = contract, harness = discipline)
-    ↓
-Loop Engineering      →  how to get the AI to iterate to quality
-                          └─ assemble → redgreen → gate → audit → inspect → ship → vault
-```
+The output looks like code. It isn't craft.
 
-Most tools stop at one layer. Techneering sits at the intersection of all four — including the parts loop systems usually skip: explicit **failure limits**, **generation ≠ evaluation**, and a **depth dial** so trivial changes skip the full ceremony. See [Design Philosophy](#design-philosophy) for the principles behind each layer.
+## The discipline
+
+Techneering wraps the model in a **harness** — Anthropic's word for the scaffolding around an agent — so its effort stays pointed where *you* aimed it. Sixteen skills walk a change from idea, through spec and code, to a verified, archived release.
+
+> **The spec is the contract. The harness is the discipline.**
+> Every line of code traces back to a requirement; nothing ships on a hunch.
+
+---
+
+## Four layers, one system
+
+AI tooling has evolved through four layers. Most stop at one. Techneering was built for all of them.
+
+| Layer | Question | In Techneering |
+|-------|----------|----------------|
+| **Prompt** | How to write one instruction well | every `SKILL.md` is a carefully designed prompt |
+| **Context** | How to manage what the AI sees | the workspace — files carry state, not chat memory |
+| **Harness** | How to constrain what the agent does | the 16-skill scaffold: *spec = contract, harness = discipline* |
+| **Loop** | How to get the AI to iterate to quality | `assemble → redgreen → gate → audit → inspect → ship → vault` |
+
+These aren't separate features — they're the same system seen from four angles. And Techneering keeps the parts loop systems usually skip: explicit **failure limits**, **generation ≠ evaluation**, and a **depth dial** so a trivial tweak skips the full ceremony.
 
 ---
 
@@ -74,7 +82,7 @@ The names follow a **forge workshop**: the spec is raw material, the code is the
 | Skill | Call | What it does |
 |-------|------|--------------|
 | **gate** | `tn:gate` | Iron law: run the command, read the output, *then* claim it works |
-| **inspect** | `tn:inspect` | Dispatch a code-reviewer subagent for global review |
+| **inspect** | `tn:inspect` | Global cross-task review — consistency, architecture, security |
 
 ### 📦 The Shipping Dock — utilities
 
@@ -82,7 +90,7 @@ The names follow a **forge workshop**: the spec is raw material, the code is the
 |-------|------|--------------|
 | **isolate** | `tn:isolate` | Create an isolated git worktree, verify the test baseline |
 | **ship** | `tn:ship` | Branch integration: merge / PR / keep / discard |
-| **craft** | `tn:craft` | Frontend design guidance (auto-triggered on UI keywords) |
+| **craft** | `tn:craft` | Frontend design guidance (auto-stacked on UI keywords) |
 
 ---
 
@@ -95,7 +103,7 @@ claude plugin marketplace add https://github.com/devnomad-byte/techneering.git
 # 2. Install — project-scoped is recommended
 claude plugin install tn@techneering -s project
 
-# 3. Start Claude Code and test the forge
+# 3. Start Claude Code and strike
 claude
 ```
 
@@ -140,8 +148,6 @@ Every skill writes its progress to disk. Close the terminal, come back tomorrow 
 
 > **You drive the AI. Not the other way around.**
 
-A model alone will drift — it guesses, over-builds, forgets decisions mid-conversation, and declares success without checking. Techneering wraps the model in a **harness** (Anthropic's term for the scaffolding around an agent) so its effort stays pointed where *you* aimed it.
-
 | Principle | What it means |
 |-----------|---------------|
 | **You hold the reins** | Every step is a handoff *you* approve. AI proposes, you decide. Nothing ships without a human checkpoint. |
@@ -152,7 +158,7 @@ A model alone will drift — it guesses, over-builds, forgets decisions mid-conv
 
 This pattern — decompose, hand off via artifacts, separate generation from evaluation — comes from [Anthropic's work on long-running agents](https://www.anthropic.com/engineering/harness-design-long-running-apps). Techneering applies it to **human-in-the-loop** development: the harness keeps the AI disciplined, you keep the harness pointed at the right target.
 
-The four layers shown at the top aren't separate features — they're the same system seen from different angles. The loop is the latest layer ([a pattern Addy Osmani named in 2024](https://addyosmani.com/blog/loop-engineering/)): stop hand-prompting every step, design the system that does it. Techneering was built this way from the start — including the parts most loop systems skip: explicit **failure limits** (`tn:diagnose` stops after 3 failed fixes), **generation ≠ evaluation** (the writer never grades its own work), and a **depth dial** so trivial tweaks skip the full ceremony.
+The loop is the latest layer — [a pattern Addy Osmani named in 2025](https://addyosmani.com/blog/loop-engineering/): stop hand-prompting every step, design the system that does it. Techneering was built this way from the start — including the parts most loop systems skip: explicit **failure limits** (`tn:diagnose` stops after 3 failed fixes), **generation ≠ evaluation** (the writer never grades its own work), and a **depth dial** so trivial tweaks skip the full ceremony.
 
 ---
 
@@ -187,6 +193,17 @@ techneering/
 | **Bash** 4.0+ | the session-start hook |
 
 Runs on Windows 10/11 · macOS 12+ · Linux.
+
+---
+
+## Star History
+
+<a href="https://star-history.com/#devnomad-byte/techneering&Date" target="_blank" rel="noopener">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=devnomad-byte/techneering&type=Date&theme=dark" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=devnomad-byte/techneering&type=Date" width="600" />
+  </picture>
+</a>
 
 ---
 

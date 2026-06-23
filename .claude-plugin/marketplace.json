@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "techneering",
+  "version": "1.0.0",
+  "description": "Techneering — open-source Claude Code plugin marketplace: spec-driven development workflows, execution discipline, and frontend design",
+  "owner": {
+    "name": "devnomad-byte",
+    "email": "qjc1024@aliyun.com"
+  },
+  "plugins": [
+    {
+      "name": "tn",
+      "description": "Techneering — open-source unified skills plugin: spec-driven development workflow (draft/forge/audit/vault) + execution discipline (redgreen/assemble/diagnose) + code review + frontend design. 16 skills covering the full development lifecycle.",
+      "version": "1.0.0",
+      "author": {
+        "name": "devnomad-byte",
+        "email": "qjc1024@aliyun.com"
+      },
+      "license": "MIT",
+      "source": "./",
+      "category": "development",
+      "homepage": "https://github.com/devnomad-byte/techneering"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# SessionStart hook for Techneering plugin
+
+set -euo pipefail
+
+# Determine plugin root directory
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PLUGIN_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+# Read compass gateway content
+gateway_content=$(cat "${PLUGIN_ROOT}/skills/compass/SKILL.md" 2>&1 || echo "Error reading compass skill")
+
+# Escape string for JSON embedding using bash parameter substitution
+escape_for_json() {
+    local s="$1"
+    s="${s//\\/\\\\}"
+    s="${s//\"/\\\"}"
+    s="${s//$'\n'/\\n}"
+    s="${s//$'\r'/\\r}"
+    s="${s//$'\t'/\\t}"
+    printf '%s' "$s"
+}
+
+gateway_escaped=$(escape_for_json "$gateway_content")
+session_context="<EXTREMELY_IMPORTANT>\nTechneering loaded.\n\n**Below is the full content of your 'tn:compass' skill - your introduction to using Techneering skills. For all other skills, use the 'Skill' tool:**\n\n${gateway_escaped}\n</EXTREMELY_IMPORTANT>"
+
+# Output context injection as JSON for Claude Code
+# Claude Code expects hookSpecificOutput.additionalContext (nested)
+printf '{\n  "hookSpecificOutput": {\n    "hookEventName": "SessionStart",\n    "additionalContext": "%s"\n  }\n}\n' "$session_context"
+
+exit 0

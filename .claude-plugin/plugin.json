@@ -1,0 +1,11 @@
+{
+  "name": "tn",
+  "description": "Techneering — open-source spec-driven development workflow + execution discipline + frontend design skills for Claude Code",
+  "version": "1.0.0",
+  "author": {
+    "name": "devnomad-byte",
+    "email": "qjc1024@aliyun.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/devnomad-byte/techneering"
+}
