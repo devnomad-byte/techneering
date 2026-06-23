@@ -22,7 +22,7 @@ escape_for_json() {
 }
 
 gateway_escaped=$(escape_for_json "$gateway_content")
-session_context="<EXTREMELY_IMPORTANT>\nTechneering loaded.\n\n**Below is the full content of your 'tn:compass' skill - your introduction to using Techneering skills. For all other skills, use the 'Skill' tool:**\n\n${gateway_escaped}\n</EXTREMELY_IMPORTANT>"
+session_context="<EXTREMELY_IMPORTANT>\nTechneering loaded.\n\n**Below is the full content of your 'tn:compass' skill - your introduction to using Techneering skills. For all other skills, invoke them through your host's skill mechanism:**\n\n${gateway_escaped}\n</EXTREMELY_IMPORTANT>"
 
 # Output context injection as JSON for Claude Code
 # Claude Code expects hookSpecificOutput.additionalContext (nested)

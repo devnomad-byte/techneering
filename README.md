@@ -11,8 +11,9 @@
 [![skills](https://img.shields.io/badge/skills-16-orange?style=flat-square)](#the-16-skills)
 [![platform](https://img.shields.io/badge/platform-Win%20%7C%20mac%20%7C%20Linux-555?style=flat-square)](#requirements)
 [![claude](https://img.shields.io/badge/Claude%20Code-plugin-blueviolet?style=flat-square)](#quick-start)
+[![codex](https://img.shields.io/badge/Codex-plugin-412f3d?style=flat-square)](#quick-start)
 
-`tn:` · a Claude Code skills plugin
+`tn:` · a skills plugin for **Claude Code** and **Codex**
 
 **English** · [简体中文](README.zh-CN.md)
 
@@ -99,6 +100,10 @@ The names follow a **forge workshop**: the spec is raw material, the code is the
 
 ## Quick Start
 
+Techneering runs on both **Claude Code** and **Codex**. Same skills, same `tn:` prefix — pick your host.
+
+**Claude Code:**
+
 ```bash
 # 1. Register the marketplace
 claude plugin marketplace add https://github.com/devnomad-byte/techneering.git
@@ -110,7 +115,20 @@ claude plugin install tn@techneering -s project
 claude
 ```
 
-Then type <kbd>/tn:scout</kbd> to take it for a spin. On every session start, `tn:compass` is auto-injected — just say what you want to build and Techneering routes you to the right station.
+**Codex:**
+
+```bash
+# 1. Register the marketplace (clones the repo as a source)
+codex plugin marketplace add devnomad-byte/techneering
+
+# 2. Install
+codex plugin install tn@techneering
+
+# 3. Start Codex and strike
+codex
+```
+
+Then type <kbd>/tn:scout</kbd> to take it for a spin. On every session start, `tn:compass` is auto-injected (via the `SessionStart` hook on either host) — just say what you want to build and Techneering routes you to the right station.
 
 ---
 
@@ -189,11 +207,13 @@ techneering/
 
 ## Requirements
 
+Pick **one** host (Techneering works on either, or both):
+
 | Dependency | Why |
 |------------|-----|
-| **Claude Code CLI** (latest) | the host that runs the skills |
+| **Claude Code CLI** *or* **Codex CLI** (latest) | the host that runs the skills |
 | **Git** 2.20+ | the `isolate` station needs worktrees |
-| **Bash** 4.0+ | the session-start hook |
+| **Bash** 4.0+ | the session-start hook (shared by both hosts) |
 
 Runs on Windows 10/11 · macOS 12+ · Linux.
 
@@ -201,11 +221,12 @@ Runs on Windows 10/11 · macOS 12+ · Linux.
 
 ## Star History
 
-<a href="https://star-history.com/#devnomad-byte/techneering&Date" target="_blank" rel="noopener">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=devnomad-byte/techneering&type=Date&theme=dark" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=devnomad-byte/techneering&type=Date" width="600" />
-  </picture>
+<a href="https://www.star-history.com/?type=date&repos=devnomad-byte%2Ftechneering">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=devnomad-byte/techneering&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=devnomad-byte/techneering&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=devnomad-byte/techneering&type=date&legend=top-left" />
+ </picture>
 </a>
 
 ---

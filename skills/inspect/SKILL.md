@@ -40,7 +40,7 @@ HEAD_SHA=$(git rev-parse HEAD)
 
 #### Step 2: Dispatch Code-Reviewer Subagent
 
-Use the Agent tool with the code-reviewer template at `./code-reviewer-prompt.md`.
+Dispatch a reviewer subagent using the template at `./code-reviewer-prompt.md`. The template is host-neutral — see its header for how to dispatch on Claude Code (Agent tool) vs Codex (subagent). Fill the placeholders, then send the full prompt block to the reviewer.
 
 **Placeholders to fill:**
 - `WHAT_WAS_IMPLEMENTED` — What the whole change built (the proposal's "what")

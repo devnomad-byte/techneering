@@ -1,6 +1,6 @@
 ---
 name: craft
-description: Create distinctive, production-grade frontend interfaces with high design quality. Auto-stacked onto an implementation path when a task involves frontend/UI work — pages, components, layouts, styles, interactions. Also available on demand via the Skill tool as tn:craft.
+description: Create distinctive, production-grade frontend interfaces with high design quality. Auto-stacked onto an implementation path when a task involves frontend/UI work — pages, components, layouts, styles, interactions. Also available on demand as tn:craft.
 ---
 
 # Frontend Design
@@ -10,7 +10,7 @@ Create distinctive, production-grade frontend interfaces that avoid generic "AI 
 ## When This Skill Runs
 
 - **Auto-stacked (normal):** when `tn:compass` or `tn:assemble` detects frontend work via the Frontend Detection Rules (page/component/UI/layout/style, React/Vue/CSS/Tailwind, form/button/modal, etc. — full keyword list lives in `tn:compass`). In this mode it runs during the implementation phase of an existing path, then returns to the caller.
-- **On demand:** invoke directly via the Skill tool as `tn:craft` (the model calls it through the Skill tool with the `tn:` prefix; users may also trigger it from the CLI). Use this for "just design me a page" requests that skip the spec flow.
+- **On demand:** invoke directly as `tn:craft` (through your host's skill mechanism; users may also trigger it from the CLI). Use this for "just design me a page" requests that skip the spec flow.
 
 craft is a **domain** skill — it never stands alone as a path; it stacks onto implementation and returns to its caller.
 
@@ -72,7 +72,7 @@ Focus on:
 
 | Dimension | Key point |
 |-----------|-----------|
-| Role | Domain skill — auto-stacked on frontend tasks, also callable on demand via Skill tool as tn:craft |
+| Role | Domain skill — auto-stacked on frontend tasks, also callable on demand as tn:craft |
 | Aesthetic direction | Bold choices, precise execution |
 | Forbidden fonts | Inter, Roboto, Arial, system fonts |
 | Forbidden palette | Purple gradient + white background |
@@ -91,4 +91,4 @@ When done:
 - Never produce the same design twice — vary themes, fonts, aesthetics
 - Never add emojis unless the user explicitly requests them
 - Match implementation complexity to the aesthetic vision
-- Auto-stacked when implementation involves frontend/UI code — no need to invoke it explicitly via the Skill tool unless going off-path
+- Auto-stacked when implementation involves frontend/UI code — no need to invoke it explicitly unless going off-path

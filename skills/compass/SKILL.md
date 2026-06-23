@@ -1,10 +1,11 @@
 ---
 name: compass
-description: Use when starting any conversation — establishes how to find and use Techneering skills, requiring Skill tool invocation before ANY response including clarifying questions
+description: Use when starting any conversation — establishes how to find and use Techneering skills, requiring skill invocation before ANY response including clarifying questions
 ---
 
 <SUBAGENT-STOP>
 If you were dispatched as a subagent to execute a specific task, skip this skill.
+(This is a hard instruction, not a suggestion — subagents go straight to their assigned task.)
 </SUBAGENT-STOP>
 
 <EXTREMELY-IMPORTANT>
@@ -32,7 +33,7 @@ If CLAUDE.md says "don't use TDD" and a skill says "always use TDD," follow the 
 
 ## How to Access Skills
 
-Use the `Skill` tool. When you invoke a skill, its content is loaded and presented to you — follow it directly. Never use the Read tool on skill files.
+Invoke the skill through your host's skill mechanism (the `Skill` tool on Claude Code; the skill/prompt loader on Codex). When you invoke a skill, its content is loaded and presented to you — follow it directly. Never read a skill file's raw contents manually as a substitute for invoking it.
 
 ## Skill Inventory
 
@@ -257,7 +258,7 @@ This is the gateway skill, loaded at session start. It does not have a Next Step
 ## Guardrails
 
 - Never skip skill check before responding to a user message
-- Never use the Read tool on skill files — use the Skill tool
+- Never read a skill file's raw contents manually as a substitute for invoking it — use your host's skill mechanism
 - User instructions always override skill instructions
 - When in doubt about which skill applies, invoke it to check — wrong invocations are harmless
 - The Flow Transition Rules table is the authoritative reference for skill transitions

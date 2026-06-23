@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openai.com/codex/plugin.json",
+  "name": "tn",
+  "version": "1.0.0",
+  "description": "Techneering — open-source spec-driven development workflow + execution discipline + frontend design skills. 16 skills covering the full development lifecycle. Works on both Claude Code and Codex.",
+  "author": {
+    "name": "devnomad-byte",
+    "email": "qjc1024@aliyun.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/devnomad-byte/techneering",
+  "repository": "https://github.com/devnomad-byte/techneering",
+  "skills": "./skills"
+}
+

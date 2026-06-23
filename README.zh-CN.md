@@ -11,8 +11,9 @@
 [![skills](https://img.shields.io/badge/skills-16-orange?style=flat-square)](#16-个技能)
 [![platform](https://img.shields.io/badge/platform-Win%20%7C%20mac%20%7C%20Linux-555?style=flat-square)](#环境要求)
 [![claude](https://img.shields.io/badge/Claude%20Code-plugin-blueviolet?style=flat-square)](#快速开始)
+[![codex](https://img.shields.io/badge/Codex-plugin-412f3d?style=flat-square)](#快速开始)
 
-`tn:` · 一个 Claude Code 技能插件
+`tn:` · 一个支持 **Claude Code** 和 **Codex** 的技能插件
 
 [English](README.md) · **简体中文**
 
@@ -99,6 +100,10 @@ AI 工具的演进经历了四层。大多数工具只停在某一层。Techneer
 
 ## 快速开始
 
+Techneering 同时支持 **Claude Code** 和 **Codex**。同一套技能、同一个 `tn:` 前缀——选你的宿主。
+
+**Claude Code：**
+
 ```bash
 # 1. 注册 marketplace
 claude plugin marketplace add https://github.com/devnomad-byte/techneering.git
@@ -110,7 +115,20 @@ claude plugin install tn@techneering -s project
 claude
 ```
 
-然后输入 <kbd>/tn:scout</kbd> 跑一圈。每次会话启动，`tn:compass` 自动注入——你说想做什么，Techneering 自动路由到对的工位。
+**Codex：**
+
+```bash
+# 1. 注册 marketplace（克隆仓库作为来源）
+codex plugin marketplace add devnomad-byte/techneering
+
+# 2. 安装
+codex plugin install tn@techneering
+
+# 3. 启动 Codex，开锤
+codex
+```
+
+然后输入 <kbd>/tn:scout</kbd> 跑一圈。每次会话启动，`tn:compass` 自动注入（两个宿主都通过 `SessionStart` hook 实现）——你说想做什么，Techneering 自动路由到对的工位。
 
 ---
 
@@ -189,11 +207,13 @@ techneering/
 
 ## 环境要求
 
+任选**一个**宿主（Techneering 两个都支持，也可以都装）：
+
 | 依赖 | 为什么需要 |
 |------|-----------|
-| **Claude Code CLI**（最新版） | 运行技能的宿主 |
+| **Claude Code CLI** *或* **Codex CLI**（最新版） | 运行技能的宿主 |
 | **Git** 2.20+ | `isolate` 工位需要 worktree |
-| **Bash** 4.0+ | 会话启动 hook |
+| **Bash** 4.0+ | 会话启动 hook（两个宿主共用） |
 
 支持 Windows 10/11 · macOS 12+ · Linux。
 
@@ -201,11 +221,12 @@ techneering/
 
 ## Star History
 
-<a href="https://star-history.com/#devnomad-byte/techneering&Date" target="_blank" rel="noopener">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=devnomad-byte/techneering&type=Date&theme=dark" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=devnomad-byte/techneering&type=Date" width="600" />
-  </picture>
+<a href="https://www.star-history.com/?type=date&repos=devnomad-byte%2Ftechneering">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=devnomad-byte/techneering&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=devnomad-byte/techneering&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=devnomad-byte/techneering&type=date&legend=top-left" />
+ </picture>
 </a>
 
 ---
