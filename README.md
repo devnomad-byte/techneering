@@ -221,20 +221,10 @@ Runs on Windows 10/11 · macOS 12+ · Linux.
 
 ## Star History
 
-<a href="https://www.star-history.com/?type=date&repos=devnomad-byte%2Ftechneering">
+<a href="https://www.star-history.com/?repos=devnomad-byte%2Ftechneering%2Ctechneering%2Ftechneering&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=devnomad-byte/techneering&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=devnomad-byte/techneering&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=devnomad-byte/techneering&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=devnomad-byte/techneering%2Ctechneering/techneering&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=devnomad-byte/techneering%2Ctechneering/techneering&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=devnomad-byte/techneering%2Ctechneering/techneering&type=date&legend=top-left" />
  </picture>
 </a>
-
----
-
-<div align="center">
-
-<sub>Built with discipline. Released under <a href="LICENSE">MIT</a>.</sub>
-<br>
-<sub>★ Fork it · forge it · make it yours ★</sub>
-
-</div>
