@@ -13,6 +13,8 @@
 
 `tn:` · 一个 Claude Code 技能插件
 
+[English](README.md) · **简体中文**
+
 </div>
 
 ---

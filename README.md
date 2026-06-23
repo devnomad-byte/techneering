@@ -13,6 +13,8 @@
 
 `tn:` · a Claude Code skills plugin
 
+**English** · [简体中文](README.zh-CN.md)
+
 </div>
 
 ---
