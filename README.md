@@ -7,6 +7,7 @@
 **Write the spec. Strike while it's hot. Ship with confidence.**
 
 [![license](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/devnomad-byte/techneering?style=flat-square&label=stars&color=yellow)](https://github.com/devnomad-byte/techneering/stargazers)
 [![skills](https://img.shields.io/badge/skills-16-orange?style=flat-square)](#the-16-skills)
 [![platform](https://img.shields.io/badge/platform-Win%20%7C%20mac%20%7C%20Linux-555?style=flat-square)](#requirements)
 [![claude](https://img.shields.io/badge/Claude%20Code-plugin-blueviolet?style=flat-square)](#quick-start)
